@@ -1,0 +1,1081 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <!--tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', admin_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+        <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table-->
+<br>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from premiumlayers.com/demos/furniture/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2016 02:08:29 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cây giống nông nghiệp</title>
+    
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!--Bootstrap and Other Vendors-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl.carousel/css/owl.carousel.css">    
+    
+    <link rel="stylesheet" type="text/css" href="vendors/lightbox/css/lightbox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="vendors/flexslider/flexslider.css" media="screen" />
+    
+    <!--Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!--Mechanic Styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    
+   <header class="row" id="header">
+        <div class="row m0 top_menus">
+            <div class="container">
+                <div class="row">
+                    <ul class="nav nav-pills fleft">
+                        <li><a href="index-2.html">Trang chủ</a></li>
+                        <li><a href="about.html">Đơn vị sản xuất</a></li>
+                        <li><a href="contact.html">Liên hệ </a></li>
+                    </ul>
+                    <ul class="nav nav-pills fright">
+                        <li><a href="cart.html">Giỏ Hàng</a></li>
+                        <li><a href="#">Danh sách order</a></li>
+                        <li><a href="#">Tai khoan
+                          <p id="notice"><%= notice %></p>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row m0 logo_line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 logo">
+                    <a href="index-2.html" class="logo_a">
+                    <%= image_tag("logo111.png", height: '200px') %>
+                    <%= image_tag("logo111.png", height: '200px' alt=""></a>
+                    </div>
+                    <div class="col-sm-7 searchSec">
+                        <div class="fleft searchForm">
+                            <form action="#" method="get">
+                                <div class="input-group">
+                                    <input type="hidden" name="search_param" value="all" id="search_param">
+                                    <input type="search" class="form-control" placeholder="Tìm kiếm cây giống">
+                                    <div class="input-group-btn searchFilters">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                             <!-- Tìm kiếm theo name có chứa ... -->
+                                            </div> <!-- Tìm kiếm theo age lớn hơn bằng ...  -->
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                </div><!-- /input-group -->
+                            </form>
+                        </div>
+                        <!--div class="fleft wishlistCompare">
+                            <ul class="nav">
+                                <li><a href="#"><i class="fa fa-heart"></i>Yêu thích</a></li>
+                                <li><a href="#"><i class="fa fa-exchange"></i>So sánh</a></li>
+                            </ul>
+                        </div>
+                        <div class="fleft cartCount">                        
+                            <div class="cartCountInner row m0">
+                                <span class="badge">2</span>
+                            </div>
+                        </div-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default m0 navbar-static-top">
+            <div class="container-fluid container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+                        <i class="fa fa-bars"></i> Navigation
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="nav navbar-nav">
+                        <li class="active dropdown">
+                            <a href="index-2.html"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="index-2.html">Trang chủ</a></li>
+                                <li><a href="index3.html">Home 1 </a></li>
+                                <li><a href="index2.html">Home 2</a></li>
+                                <li><a href="index3.html">Home 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">Đơn vị sản xuất</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cộng Đồng</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="services.html">Kĩ thuật</a></li>   
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="single-post.html">Single Post</a></li>
+                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown megaMenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Danh sách</a>
+                            <ul class="dropdown-menu row m0" role="menu">
+                                <li class="listMenu">
+                                    <div class="row listTitle">Mít</div>
+                                    <ul class="nav megaInnerMenu">
+                                        <li><a href="#chairs">Bưởi</a></li>
+                                        <li><a href="#tables">Cam</a></li>
+                                        <li><a href="#dressers">Na</a></li>
+                                        <li><a href="#desk">Nhãn</a></li>
+                                        <li><a href="#beds">Táo</a></li>
+                                        <li><a href="#benches">Phật thủ</a></li>
+                                        <li><a href="#moroccan">Chuối</a></li>
+                                        <li><a href="#poufs">Hoa</a></li>
+                                        <li><a href="#screen">Cây cảnh</a></li>
+                                    </ul>
+                                </li>
+                                <li class="listMenu">
+                                    <div class="row listTitle">Mua sắm theo đơn</div>
+                                    <ul class="nav megaInnerMenu">
+                                        <li><a href="#bond"><b>Táo Đài Loan</b></a></li>
+                                        <li><a href="#whitaker">Táo Thái</a></li>
+                                        <li><a href="#arden">Táo Đại</a></li>
+                                        <li><a href="#channing">Táo T5</a></li>
+                                        <li><a href="#delphine">Cam Vinh</a></li>
+                                        <li><a href="#jacque">Cam V5</a></li>
+                                        <li><a href="#lampert">Cam Canh</a></li>
+                                    </ul>
+                                </li>
+                                <li class="boxMenu">
+                                    <div class="row listTitle">
+                                        Sản phẩm<a href="product.html">Hot<i class="fa fa-caret-right"></i></a>
+                                    </div>
+                                    <ul class="nav megaInnerMenu row m0">
+                                        <li><a href="product2.html">
+                                            <div class="row m0 imgHov">
+                                                <img src="images/product/18.jpg" style="height: 220px" alt="">
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        shop now <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">Nhãn lồng</div>
+                                        </a></li>
+                                        <li><a href="product.html">
+                                            <div class="row m0 imgHov">
+                                                 <%= image_tag("product/16.jpg", height: '220') %>
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        shop now <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">Phật thủ</div>
+                                        </a></li>
+                                        <li><a href="product2.html">
+                                            <div class="row m0 imgHov">
+                                    <%= image_tag("product/16.jpg", height: '220') %>
+                                                <div class="row m0 hovCnt">
+                                                    <div class="row m0 hovCntInner">
+                                                        shop now <i class="fa fa-caret-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m0 menuTitle">Bưởi Diễn</div>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sản phẩm</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="product.html">Cây ăn quả</a></li>
+                                <li><a href="product2.html">Cây công trình</a></li>
+                                <li><a href="single-product.html">Cây ăn quả ngắn ngày</a></li>
+                                <li><a href="catalog.html">Cây ăn quả dài ngày</a></li>
+                                <li><a href="cart.html">Hoa</a></li>
+                                <li><a href="checkout.html">Cây cảnh</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index2.html">Tin tức</a></li>
+                        <li><a href="#">Tham quan</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>              
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="row topFeatures m0">
+            <div class="container">
+                <ul class="nav nav-justified text-center">
+                    <li><%= image_tag("icons/returns") %>30 ngày / tháng</li>
+                    <li><%= image_tag("icons/delivery-car.png") %>Tối ưu thời gian vận chuyển</li>  
+                    <li><%= image_tag("icons/tel24-7.png") %>Giúp đỡ 24/7</li>
+
+                </ul>
+            </div>
+        </div>
+    </header> <!--Header-->
+    
+    <!--section id="slider" class="row" class="text-center">
+        <div class="row sliderCont flexslider m0">
+            <ul class="slides nav">
+                <li>
+                    <%= image_tag("slider/4.jpg",class: "img-responsive", height: '500px', ) %>
+                    <div class="text_lines row m0">
+                        <div class="container p0">
+                            <h3>Cây giống</h3>
+                            <h2>Nông nghiệp Hoàng Anh</h2>
+                            <a href="#"><h4>show more</h4></a>
+                        </div>
+                    </div> <!--Text Lines-->
+                <!--/li>
+                <li>
+                    <%= image_tag("slider/5.jpg",class: "img-responsive", height: '500px', ) %>
+                    <div class="text_lines row m0">
+                        <div class="container p0">
+                            <h3>Cây giống</h3>
+                            <h2>Nông nghiệp Hoàng Anh</h2>
+                            <a href="#"><h4>show more</h4></a>
+                        </div>
+                    </div> <!--Text Lines-->
+                </li>
+                <!--li>
+                    <%= image_tag("slider/6.jpg",class: "img-responsive", height: '500px', ) %>
+                    <div class="text_lines row m0">
+                        <div class="container p0">
+                            <h3>Cây giống</h3>
+                            <h2>Nông nghiệp Hoàng Anh</h2>
+                            <a href="#"><h4>show more</h4></a>
+                        </div>
+                    </div> <!--Text Lines-->
+                </li>
+            </ul>
+        </div>
+    </section--> <!--Slider-->
+    
+    <section id="shopFeatures" class="row">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-3 coreFeature">
+                    <div class="row m0 coreFeatureInner">
+                        <div class="row m0 icon circle"><%= image_tag('icons/shopping-bag.png') %></div>
+                        <h5>DANH SÁCH SẢN PHẨM</h5>
+                        <p>Chúng tôi cung cấp chất lượng tốt nhất của sản phẩm cho bạn.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 coreFeature">
+                    <div class="row m0 coreFeatureInner">
+                        <div class="row m0 icon circle"><%= image_tag('icons/car2.png') %></div>
+                        <h5>GIAO HÀNG TẬN NHÀ</h5>
+                        <p>Chúng tôi cung cấp chất thời gian vận chuyển ngắn nhất cho bạn.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 coreFeature">
+                    <div class="row m0 coreFeatureInner">
+                        <div class="row m0 icon circle"><%= image_tag("icons/cart2.png") %></div>
+                        <h5>MUA SẮM DỄ DÀNG</h5>
+                        <p>Chúng tôi rút ngắn thời gian giao dịch nhỏ nhất cho bạn</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 coreFeature">
+                    <div class="row m0 coreFeatureInner">
+                        <div class="row m0 icon circle"><%= image_tag("icons/catalog.png") %></div>
+                        <h5>ĐẢM BẢO CHẤT LƯỢNG</h5>
+                        <p>Chúng tôi thực hiện việc kinh doanh lấy chữ tín lên hàng đầu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!--Shop Core Feature-->
+    
+    <!--<section id="homeBanners" class="row">
+        <div class="container">
+            <div class="row text-center">
+                <a href="product.html">
+                    <div class="col-sm-3 homeBanner">
+                        <div class="row">
+                            <img src="images/banner/homeBanner1.png" alt="" class="bgImage">
+                            <div class="row m0 bannerTextArea">
+                                <div class="row m0 bannerTextAreaInner">
+                                    <h4>new year sales</h4>
+                                    <h5>now in stores</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 homeBanner">
+                        <div class="row">
+                            <img src="images/banner/homeBanner2.png" alt="" class="bgImage">
+                        </div>
+                    </div>
+                    <div class="col-sm-3 homeBanner">
+                        <div class="row">
+                            <img src="images/banner/homeBanner3.png" alt="" class="bgImage">
+                            <div class="row m0 bannerTextArea">
+                                <div class="row m0 bannerTextAreaInner">
+                                    <h4>new arrivals</h4>
+                                    <h5>shop now</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>Banner-->
+    
+    <section id="featureProducts" class="row contentRowPad">
+        <div class="container">
+            <div class="row sectionTitle">
+                <h3>Danh mục sản phẩm</h3>
+                <h5>Cây giống ăn quả bán chạy nhất</h5>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/12.jpg", height: '335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Táo Đài Loan</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                          <%= image_tag("product/14.jpg", height: '335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>c
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Mít thái</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <a class="addToCart btn" href="#">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                          <%= image_tag("Anhcaygiong/vusua.jpg", height: '335') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Vú Sữa</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                          <%= image_tag("Anhcaygiong/vusua.jpg", height: '335px') %> 
+                                <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Bưởi Diễn</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+            <div class="row">
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/15.jpg", height: '335px') %>
+                            <img src="images/product/15.jpg" style="height: 335px" alt="">
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Ổi Đông Dư</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                          <%= image_tag("product/16.jpg", height: '335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Phật thủ</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <a class="addToCart btn" href="#">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/17.jpg", height: '335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Xoài Đài Loan</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/18.jpg", height: '335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>125.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Nhãn lồng Hưng Yên</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!--Feature Products 4 Collumn-->
+    
+    <!--section id="featureCategory" class="row contentRowPad">
+        <div class="row m0 sectionTitle">
+            <h3>Bảng xếp hạng cây giống</h3>
+            <h5>Mong muốn nhận được sự đánh giá của các bạn</h5>
+        </div>
+        <div class="owl-carousel featureCats row m0">
+            <div class="item">
+                <div class="row m0 imgHov">
+                  <%= image_tag("product/14.jpg", height: '220px') %>
+                    <div class="row m0 hovArea">
+                        <i class="fa fa-heart-o"></i><br><h4>11 items</h4><a href="product.html">shop now</a>
+                    </div>
+                </div>
+                <a href="product.html"><h4> Mít Thái</h4></a>
+            </div>
+            <div class="item">
+                <div class="row m0 imgHov">
+                  <%= image_tag("product/15.jpg", height: '220px') %>
+                    <div class="row m0 hovArea">
+                        <i class="fa fa-heart-o"></i><br><h4>21 items</h4><a href="product.html">shop now</a>
+                    </div>
+                </div>
+                <a href="product.html"><h4>Mít Thái</h4></a>
+            </div>
+            <div class="item">
+                <div class="row m0 imgHov">
+                    <%= image_tag("product/16.jpg", height: '220px') %>
+                    <div class="row m0 hovArea">
+                        <i class="fa fa-heart-o"></i><br><h4>30 items</h4><a href="product.html">shop now</a>
+                    </div>
+                </div>
+                <a href="product.html"><h4>Ổi Đông Dư</h4></a>
+            </div>
+            <div class="item">
+                <div class="row m0 imgHov">
+                    <%= image_tag("product/17.jpg", height: '220px') %>
+                    <div class="row m0 hovArea">
+                        <i class="fa fa-heart-o"></i><br><h4>55 items</h4><a href="product.html">shop now</a>
+                    </div>
+                </div>
+                <a href="product.html"><h4>Phật thủ</h4></a>
+            </div>
+            <div class="item">
+                <div class="row m0 imgHov">
+                    <%= image_tag("product/18.jpg", height: '220px') %>
+                    <div class="row m0 hovArea">
+                        <i class="fa fa-heart-o"></i><br><h4>21 items</h4><a href="product.html">shop now</a>
+                    </div>
+                </div>
+                <a href="product.html"><h4>Xoài Đài Loan</h4></a>
+            </div>
+        </div>
+    </section--> <!--Feature Categories-->
+    
+    <section id="furnitureHouse" class="row contentRowPad">
+        <div class="container">
+            <div class="row sectionTitle">
+                <h3>Cây trồng mới</h3>
+                <h5>Áp dụng thành tựu khoa học kĩ thuật vào sản xuất để có thể có được năng xuất cao nhất</h5>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/14.jpg", height:'335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>455.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Mít thái</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                           <%= image_tag("product/15.jpg", height:'335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>830.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Ổi Đông Dư</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <a class="addToCart btn" href="#">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                           <%= image_tag("product/16.jpg", height:'335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>525.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Phật thủ</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                           <%= image_tag("product/17.jpg", height:'335px') %>">
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>1025.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Xoài Đài Loan</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                            <%= image_tag("product/18.jpg", height:'335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>725.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Nhãn lồng</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 product">
+                    <div class="productInner row m0">
+                        <div class="row m0 imgHov">
+                          <<%= image_tag("product/14.jpg", height:'335px') %>
+                            <div class="row m0 hovArea">
+                                <div class="row m0 icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-expand"></i></a></li>
+                                    </ul>                                    
+                                </div>
+                                <div class="row m0 proType"><a href="#">Chất lượng</a></div>
+                                <div class="row m0 proRating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <div class="row m0 proPrice"><i class="fa fa-usd"></i>825.00</div>
+                            </div>
+                        </div>
+                        <div class="row m0 proName"><a href="single-product.html">Mít siêu sớm</a></div>
+                        <div class="row m0 proBuyBtn">
+                            <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!--Feature Products 4 Collumn>
+    
+    <section id="testimonialTabs" class="row contentRowPad">
+        <div class="container">
+            <div class="row sectionTitle">
+                <h3>some words from our customers</h3>
+                <h5>we satisfied more than 700 customers</h5>
+            </div>
+            <div class="row">
+                <ul class="nav nav-tabs" role="tablist" id="testiTab">
+                    <li role="presentation" class="active"><a href="#testi1" aria-controls="testi1" role="tab" data-toggle="tab">
+                        <img src="images/testimonial/1.png" alt=""><i class="fa fa-plus-circle"></i>
+                    </a></li>
+                    <li role="presentation"><a href="#testi2" aria-controls="testi2" role="tab" data-toggle="tab">
+                        <img src="images/testimonial/2.png" alt=""><i class="fa fa-plus-circle"></i>
+                    </a></li>
+                    <li role="presentation"><a href="#testi3" aria-controls="testi3" role="tab" data-toggle="tab">
+                        <img src="images/testimonial/3.png" alt=""><i class="fa fa-plus-circle"></i>
+                    </a></li>
+                    <li role="presentation"><a href="#testi4" aria-controls="testi4" role="tab" data-toggle="tab">
+                        <img src="images/testimonial/4.png" alt=""><i class="fa fa-plus-circle"></i>
+                    </a></li>
+                    <li role="presentation"><a href="#testi5" aria-controls="testi5" role="tab" data-toggle="tab">
+                        <img src="images/testimonial/5.png" alt=""><i class="fa fa-plus-circle"></i>
+                    </a></li>
+                </ul>
+
+                <div class="tab-content testiTabContent">
+                    <div role="tabpanel" class="tab-pane active" id="testi1">
+                        <h5 class="customerName">Dwayne johnson</h5>
+                        <h5 class="customerType">happy customer</h5>
+                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="testi2">
+                        <h5 class="customerName">Dwayne johnson</h5>
+                        <h5 class="customerType">happy customer</h5>
+                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="testi3">
+                        <h5 class="customerName">Dwayne johnson</h5>
+                        <h5 class="customerType">happy customer</h5>
+                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="testi4">
+                        <h5 class="customerName">Dwayne johnson</h5>
+                        <h5 class="customerType">happy customer</h5>
+                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="testi5">
+                        <h5 class="customerName">Dwayne johnson</h5>
+                        <h5 class="customerType">happy customer</h5>
+                        <p>“ FurnitureHouse is really excellent site for furnitures. I am very happy with the FurnitureHouse products and dedicated services from them. FurnitureHouse is really excellent site for furnitures. ”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>Testimonial Tabs-->
+    
+    <section id="brands" class="row contentRowPad">
+        <div class="container">
+            <div class="row sectionTitle">
+                <h3>Những nhà cung cấp cây giống của chúng tôi</h3>
+                <h5>Uy tín - Chất lượng - Hợp lí</h5>
+            </div>
+            <div class="row brands">                
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><img src="images/brands/1.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/brands/2.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/brands/3.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/brands/4.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/brands/5.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="row">
+        <div class="row m0 topFooter">
+            <div class="container line1">
+                <div class="row footFeatures">
+                    <div class="col-sm-4 footFeature">
+                        <div class="media">
+                            <div class="media-left icon"><img src="images/icons/car3.png" alt=""></div>
+                            <div class="media-body texts">
+                                <h4>free shipping</h4>
+                                <h2>International</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footFeature">
+                        <div class="media m0">
+                            <div class="media-left icon"><img src="images/icons/tel24-7_2.png" alt=""></div>
+                            <div class="media-body texts">
+                                <h4>24 hours helpline</h4>
+                                <h2>01693060073</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footFeature">
+                        <div class="media m0">
+                            <div class="media-left icon"><img src="images/icons/shopping-bag2.png" alt=""></div>
+                            <div class="media-body texts">
+                                <h4>Tin tức</h4>
+                                <h2>Sản xuất</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container line2">
+                <div class="row">
+                    <div class="col-sm-3 widget">
+                        <div class="row m0">
+                            <h4>Hỗ trợ khách hàng</h4>
+                            <p>Chúng tôi cung cấp chất lượng tốt nhất của sản phẩm cho bạn.Chúng tôi luôn ở đây để giúp khách hàng đáng yêu của chúng tôi.</p>
+                            <ul class="list-inline">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 widget">
+                        <div class="row m0">
+                            <h4>Thông tin</h4>
+                            <ul class="nav">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Top Brands</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 widget">
+                        <div class="row m0">
+                            <h4>Những nhãn hiệu hàng đầu</h4>
+                            <ul class="nav">
+                                <li><a href="#">Cây giống Hoàng Anh</a></li>
+                                <li><a href="#">FCây giống Lan Hương</a></li>
+                                <li><a href="#">Cây giống Hoàng Chiến</a></li>
+                                <li><a href="#">Cây giống Hà Thành</a></li>
+                                <li><a href="#">Cây giống Xuân Khương</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 widget">
+                        <div class="row m0">
+                            <h4>Đăng kí nhận tin tức của chúng tôi</h4>
+                            <form action="http://premiumlayers.com/demos/furniture/subscriptionList.php" method="post" role="form">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    <input type="email" class="form-control" id="subscribeEmail" name="subscribeEmail" placeholder="EMAIL ADDRESS">
+                                </div>
+                                <input type="submit" class="form-control" value="Subscribe" id="submit" name="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row m0 copyRight">
+            <div class="container">
+                <div class="row">
+                    <div class="fleft">&copy; 2015 <a href="index-2.html">FurnitureHouse</a> All Rights Reserved.</div>
+                    <ul class="nav nav-pills fright">
+                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+   
+    <!--jQuery, Bootstrap and other vendor JS-->
+    
+    <!--jQuery-->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    
+    <!--Google Maps-->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!--Nice Scroll-->
+    <script src="vendors/nicescroll/jquery.nicescroll.js"></script>
+        
+    <!--Flickr-->
+    
+    
+    <!--Lightshot-->
+    <script src="vendors/lightbox/js/lightbox.min.js"></script>
+    
+    <!--Tweets-->
+    <script src="vendors/tweet/scripts.js"></script>
+    <script src="vendors/tweet/tweetie.min.js"></script>
+    
+    <!--Counter Up-->
+    <script src="vendors/waypoints/waypoints.min.js"></script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    
+    <!--Owl Carousel-->
+    <script src="vendors/owl.carousel/js/owl.carousel.min.js"></script>
+    
+    <!--Isotope-->
+    <script src="vendors/isotope/isotope-custom.js"></script>
+    
+    <!--FlexSlider-->
+    <script src="vendors/flexslider/jquery.flexslider-min.js"></script>
+    
+    <!--Strella JS-->
+    <script src="js/furniture.js"></script>
+</body>
+
+<!-- Mirrored from premiumlayers.com/demos/furniture/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2016 02:12:56 GMT -->
+</html>
