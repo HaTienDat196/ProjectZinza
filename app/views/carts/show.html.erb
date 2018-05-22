@@ -1,11 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= notice %>
 <h2>Your cart</h2>
-<ul>
-	<% if @cart.present?%>
-	    <% @cart.line_items.each do |a| %>
-	    <li><%= a.product.name %></li>
-	    <% end %>
-	 <%end%>   
-</ul>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<table>
+    <% @cart.line_items.each do |item| %>
+        <tr>
+            <td><%= item.quantity %> x </td>
+            <td><%= item.product.name %></td>
+            <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+        </tr>
+    <% end %>
+     
+    <tr class="total_line">
+        <td colspan="2">Total</td>
+        <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+</table>
+ 
+<%= button_to 'Empty cart', 
+              @cart, 
+              :method => :delete,
+              data: {:confirm => 'Are you sure?'} %>
