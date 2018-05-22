@@ -253,17 +253,11 @@
                             </div>
                             <div class="row m0 proName"><a href="single-product.html"><%= product.name %></a></div>
                             <div class="row m0 proBuyBtn">
-                                <button class="addToCart btn">Thêm vào giỏ hàng</button>
+                                <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
                             </div>
                         </div>
                     </div>
                 <% end %>
-               
-               
-                
-                
-                
-            
             </div>
         </div>
         <div>
