@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'ransack'
 gem 'config'
 gem 'carrierwave'
+gem 'haml'
 gem 'bootstrap-kaminari-views'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

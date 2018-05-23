@@ -1,0 +1,11 @@
+= simple_form_for [:admin, @product], :html => {:multipart => true} do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  .form-inputs
+    = f.input :name
+    = f.input :price
+    = f.input :number
+    = f.file_field :image
+    = f.association :category
+  .form-actions
+    = f.button :submit
