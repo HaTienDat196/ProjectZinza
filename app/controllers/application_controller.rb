@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  	before_action :authenticate_user!
-  	def home
-  		render template: "pages/#{params[:page]}"
-  	end
+    before_action :authenticate_user!
     def current_cart
         Cart.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound

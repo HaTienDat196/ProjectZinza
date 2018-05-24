@@ -1,0 +1,34 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/dat/Project_Version5/app/models/cart.rb": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/dat/Project_Version5/app/models/line_item.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1527133178
+  }
+}
