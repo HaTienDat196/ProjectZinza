@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   end
   resources :products, concerns: :paginatable
   get "/admin", to: "admin#index"
-  root "products#index"
+  scope "(:locale)", locale: /en|vi/ do
+  root to: 'products#index'
+  end
 end

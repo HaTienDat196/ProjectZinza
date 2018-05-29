@@ -1,0 +1,15 @@
+vi:
+  products:
+    index:  
+      home_pages: "Trang Chủ"
+      production_unit: "Đơn Vị Sản Xuất"
+      contact: "Liên Hệ"
+      cat: "Gio Hang"
+      line_items: "Danh Sách Order"
+      account: "Tài Khoản"
+      home: "HOME"
+      community: "CỘNG ĐỒNG"
+      product: "SẢN PHẨM"
+      list: "DANH SÁCH"
+      news: "TIN TỨC"
+      sightseeing: "THAM QUAN"

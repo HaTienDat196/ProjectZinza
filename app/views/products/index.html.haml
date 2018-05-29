@@ -53,9 +53,11 @@
               %li
                 %a{:href => "contact.html"} Liên hệ
             %ul.nav.nav-pills.fright
-              %li= link_to "Gio hang", new_cart_path
-              %li= link_to " Danh sách order", line_items_path
-              %li= link_to "Tài khoản", new_admin_user_url
+              %li= link_to t(".home_pages"), new_cart_path
+              %li= link_to t(".line_items"), line_items_path
+              %li= link_to t(".account"), new_admin_user_url
+              %li= link_to "English", locale:"en"
+              %li= link_to "Vietnamese", locale:"vi"
       .row.m0.logo_line
         .container
           .row
