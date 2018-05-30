@@ -18,6 +18,7 @@ gem 'config'
 gem 'carrierwave'
 gem 'haml'
 gem 'bootstrap-kaminari-views'
+gem 'mysql2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
