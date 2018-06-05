@@ -1,36 +1,26 @@
 class Admin::ProductsController < AdminController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
-  # GET /products
-  # GET /products.json
   def index
-    @products = Product.all.page(params[:page]).per(12)  
-    @search = Product.search(params[:q])
-    @product = @search.result
-  end
-  def search
-  index
-  render :index
-  end
-  # GET /products/1
-  # GET /products/1.json
-  def show
+    @products = Product.all.page(params[:page]).per(12)
+    @q = Product.search(params[:q])
   end
 
-  # GET /products/new
+  def search
+    index
+    render :index
+  end
+
+  def show; end
+
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /products
-  # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to admin_products_url, notice: 'Product was successfully created.' }
@@ -42,8 +32,6 @@ class Admin::ProductsController < AdminController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -56,8 +44,6 @@ class Admin::ProductsController < AdminController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
   def destroy
     @product.destroy
     respond_to do |format|
@@ -67,13 +53,12 @@ class Admin::ProductsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:name, :price, :number, :image, :category_id)
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(:name, :price, :number, :image, :category_id)
+  end
 end

@@ -1,0 +1,88 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - config/unicorn.rb
+    - tmp/**/*
+    - vendor/bundle/**/*
+    - node_modules/**/*
+    - bin/*
+    - Gemfile
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - config/initializers/simple_form.rb
+    - config/initializers/simple_form/*
+    - app/services/*
+    - config/puma.rb
+    - config/initializers/simple_form_bootstrap.rb
+    - config/environments/production.rb
+    - app/admin/dashboard.rb
+    - config/initializers/active_admin.rb
+    - config/routes.rb
+    - config/spring.rb
+    - config/environments/development.rb
+    - app/uploaders/image_uploader.rb
+    - db/migrate/20180520083406_devise_create_users.rb
+    - db/migrate/20180530110939_create_active_admin_comments.rb
+    - config/initializers/kaminari_config.rb
+    - db/migrate/20180522033550_create_carts.rb
+    - db/migrate/20180522083933_add_quantity_to_line_items.rb
+    - db/migrate/20180530110936_devise_create_admin_users.rb
+    - app/controllers/line_items_controller.rb
+    - app/models/cart.rb
+
+GlobalVars:
+  AllowedVariables:
+    - $redis
+    - $twitter
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# 複数行での「lambda」で「->」による省略記法を許可
+Lambda:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# 「and」「or」の使用を許可
+AndOr:
+  Enabled: false
+
+# Missing top-level class documentation comment.
+Style/Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Lint/StringConversionInInterpolation:
+  Exclude:
+    - 'spec/steps/**/*_steps.rb'
+
+Style/WordArray:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/RaiseArgs:
+  EnforcedStyle: compact

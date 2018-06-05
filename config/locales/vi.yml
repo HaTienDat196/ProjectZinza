@@ -1,6 +1,6 @@
 vi:
   products:
-    index:  
+    index:
       home_pages: "Trang Chủ"
       production_unit: "Đơn Vị Sản Xuất"
       contact: "Liên Hệ"
@@ -13,3 +13,4 @@ vi:
       list: "DANH SÁCH"
       news: "TIN TỨC"
       sightseeing: "THAM QUAN"
+      add_to_Cart: "Thêm vào giỏ hàng"

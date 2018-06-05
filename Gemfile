@@ -7,18 +7,24 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
-gem 'bootstrap-sass', '3.3.7'
-gem 'jquery-rails'
-gem 'simple_form'
-gem 'devise'
-gem 'kaminari'
-gem 'ransack'
-gem 'config'
-gem 'carrierwave'
-gem 'haml'
+gem 'activeadmin'
 gem 'bootstrap-kaminari-views'
+gem 'bootstrap-sass', '3.3.7'
+gem 'carrierwave'
+gem 'config'
+gem 'devise'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'simple_form'
+gem 'haml'
+gem 'mini_magick'
 gem 'mysql2'
+gem 'rails', '~> 5.1.6'
+gem 'ransack'
+gem 'rubocop'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -47,19 +53,18 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
  group :test do
-  gem 'faker'
-  gem 'capybara'
-  gem 'guard-rspec'
-  gem 'launchy'
-  gem 'shoulda-matchers'
-  gem 'simplecov', require: false
+   gem 'faker'
+   gem 'capybara'
+   gem 'guard-rspec'
+   gem 'launchy'
+   gem 'shoulda-matchers'
+   gem 'simplecov', require: false
  end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

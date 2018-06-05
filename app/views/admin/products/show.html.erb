@@ -17,9 +17,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @product.image %>
-</p>
-
+<%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'), @product.image.url, target: '_blank') if @product.image? %>
 <p>
   <strong>Category:</strong>
   <%= @product.category.name %>

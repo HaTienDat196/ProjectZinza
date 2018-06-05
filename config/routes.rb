@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :views
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :line_items
   resources :carts
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   namespace :admin do
-  	resources :products
-  	resources :categories
-  	resources :users
+    resources :products
+    resources :categories
+    resources :users
   end
-    concern :paginatable do
+  concern :paginatable do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
     resources :people do
