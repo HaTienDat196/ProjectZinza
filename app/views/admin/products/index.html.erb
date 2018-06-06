@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
-<%= search_form_for @search, class: "form-inline" do |f| %>
+<h1>Bảng danh sách sản phẩm</h1>
+<%= search_form_for @search, url: admin_products_path, class: "form-inline" do |f| %>
   <div class="form-group">
-      <%= f.label :name_cont, 'Product Name:' %>
+      <%= f.label :name_cont, 'Tên sản phẩm :' %>
         <%= f.text_field :name_cont, class: "form-control" %><br>
     </div>
     <%= f.submit 'Search', class: "btn btn-default" %>
 <% end %>
-<h1>Bang danh sach san pham</h1>
-</table>
 <table>
   <thead>
     <tr>
@@ -27,7 +26,7 @@
         <td><%= product.number %></td>
         <td><%= product.image %></td>
         <td><%= product.category.name %></td>
-        <td><%= link_to 'Show', admin_product_path(product) %></td>
+        <td><%= link_to 'Show ', admin_product_path(product) %></td>
         <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
         <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -38,6 +37,6 @@
 <%= paginate @products, theme: 'twitter-bootstrap-3' %>
 <table>
 <tr style="color: red">
-  <td><%= link_to 'New Product', new_admin_product_path %></td>
+  <td><%= link_to 'Tạo sản phẩm mới', new_admin_product_path %></td>
 </tr>
 </table>

@@ -3,9 +3,8 @@ class Admin::ProductsController < AdminController
 
   def index
     @products = Product.all.page(params[:page]).per(12)
-    @q = Product.search(params[:q])
-  end
-
+    @search = Product.search(params[:q])
+    @product = @search.result
   def search
     index
     render :index

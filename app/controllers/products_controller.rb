@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.page(params[:page]).per(12)
     @search = Product.search(params[:q])
-    @users = @search.result
+    @product = @search.result
   end
 
   def show; end
