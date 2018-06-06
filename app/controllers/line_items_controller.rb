@@ -18,6 +18,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created') }
+        format.js   { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -57,9 +58,9 @@ class LineItemsController < ApplicationController
   end
   private
 
-  def product_id
-    if product_id.nill?
-      errors.add(:product, 'is not valid or is not active')
-    end
-  end
+  # def product_id
+  #   if product_id.nill?
+  #     errors.add(:product, 'is not valid or is not active')
+  #   end
+  # end
 end
