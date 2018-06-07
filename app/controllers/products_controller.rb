@@ -2,9 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all.page(params[:page]).per(12)
     @search = Product.search(params[:q])
-    @product = @search.result
+    @product = @search.result.page(params[:page]).per(12)
   end
 
   def show; end

@@ -9,3 +9,8 @@
     = f.association :category
   .form-actions
     = f.button :submit
+= button_to 'Empty cart',              |
+  line_item,                                |
+  :method => :delete,                  |
+  data: {:confirm => 'Are you sure?' } |
+

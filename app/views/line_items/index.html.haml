@@ -29,3 +29,4 @@
     - @line_items.each do |line_item|
       %td= line_item.cart.total_price
     %tr
+      %td= link_to 'Thanh toán', new_order_path
