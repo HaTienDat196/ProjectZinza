@@ -47,11 +47,11 @@
         .container
           .row
             %ul.nav.nav-pills.fleft
-              %li= link_to "Trang chủ" , products_url
+              %li= link_to t(".home_pages"), products_path
               %li
-                %a{:href => "about.html"} Đơn vị sản xuất
+              %li= link_to t(".order_item"), new_cart_path
               %li
-                %a{:href => "contact.html"} Liên hệ
+              %li= link_to t(".number_phone"), new_cart_path
             %ul.nav.nav-pills.fright
               %li= link_to t(".home_pages"), products_path
               %li= link_to t(".line_items"), line_items_path
@@ -63,16 +63,15 @@
           .row
             .col-sm-5.logo
               %a.logo_a{:href => "index-2.html"}
-                %img_ta{:alt => "Furniture House", :src => "images/logo111.png", :style => "height:200px"}
+                %img_tag{:alt => "Furniture House", :src => "images/logo111.png", :style => "height:200px"}
       %nav.navbar.navbar-default.m0.navbar-static-top
         .container-fluid.container
           = search_form_for @search, url: products_path, class: "form-inline" do |f|
             .form-group
-              = f.label :name_cont, 'Tên sản phẩm :'
+              = f.label :name_cont, t(".product_name")
               = f.text_field :name_cont, class: "form-control"
               %br/
             = f.submit 'Search', class: "btn btn-default"
-
           .navbar-header
             %button.navbar-toggle.collapsed{"data-target" => "#mainNav", "data-toggle" => "collapse", :type => "button"}
               %i.fa.fa-bars
@@ -84,7 +83,7 @@
                 %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "index-2.html", :role => "button"} Home
                 %ul.dropdown-menu{:role => "menu"}
                   %li
-                    %a{:href => "index-2.html"} Trang chủ
+                    %li= link_to t(".home_pages"), products_path
                   %li
                     %a{:href => "index3.html"} Home 1
                   %li
@@ -92,9 +91,10 @@
                   %li
                     %a{:href => "index3.html"} Home 3
               %li
-                %a{:href => "about.html"} Đơn vị sản xuất
+              %li= link_to t(".production_unit"), admin_products_path
               %li.dropdown
-                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"} Cộng Đồng
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  = t(".community_index")
                 %ul.dropdown-menu{:role => "menu"}
                   %li
                     %a{:href => "services.html"} Kĩ thuật
@@ -107,47 +107,66 @@
                   %li
                     %a{:href => "404.html"} 404
               %li.dropdown.megaMenu
-                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"} Danh sách
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  = t(".featured_items")
                 %ul.dropdown-menu.row.m0{:role => "menu"}
                   %li.listMenu
-                    .row.listTitle Mít
+                    .row.listTitle Danh sách các mặt hang
                     %ul.nav.megaInnerMenu
+                      - @product.each do |product|
+                        %a{:href => "#"}= product.name
+                  / %li.listMenu
+                  /   .row.listTitle Mua sắm theo đơn
+                  /   %ul.nav.megaInnerMenu
+                  /     %li
+                  /       %a{:href => "#bond"}
+                  /         %b Táo Đài Loan
+                  /     %li
+                  /       %a{:href => "#whitaker"} Táo Thái
+                  /     %li
+                  /       %a{:href => "#arden"} Táo Đại
+                  /     %li
+                  /       %a{:href => "#channing"} Táo T5
+                  /     %li
+                  /       %a{:href => "#delphine"} Cam Vinh
+                  /     %li
+                  /       %a{:href => "#jacque"} Cam V5
+                  /     %li
+                  /       %a{:href => "#lampert"} Cam Canh
+                  %li.boxMenu
+                    .row.listTitle
+                      Sản phẩm
+                      %a{:href => "product.html"}
+                        Hot
+                        %i.fa.fa-caret-right
+                    %ul.nav.megaInnerMenu.row.m0
                       %li
-                        %a{:href => "#chairs"} Bưởi
+                        %a{:href => "product2.html"}
+                          .row.m0.imgHov
+                            = image_tag("product/18.jpg", height: '200px')
+                            .row.m0.hovCnt
+                              .row.m0.hovCntInner
+                                shop now
+                                %i.fa.fa-caret-right
+                          .row.m0.menuTitle Nhãn lồng
                       %li
-                        %a{:href => "#tables"} Cam
+                        %a{:href => "product.html"}
+                          .row.m0.imgHov
+                            = image_tag("product/16.jpg", height: '200px')
+                            .row.m0.hovCnt
+                              .row.m0.hovCntInner
+                                shop now
+                                %i.fa.fa-caret-right
+                          .row.m0.menuTitle Phật thủ
                       %li
-                        %a{:href => "#dressers"} Na
-                      %li
-                        %a{:href => "#desk"} Nhãn
-                      %li
-                        %a{:href => "#beds"} Táo
-                      %li
-                        %a{:href => "#benches"} Phật thủ
-                      %li
-                        %a{:href => "#moroccan"} Chuối
-                      %li
-                        %a{:href => "#poufs"} Hoa
-                      %li
-                        %a{:href => "#screen"} Cây cảnh
-                  %li.listMenu
-                    .row.listTitle Mua sắm theo đơn
-                    %ul.nav.megaInnerMenu
-                      %li
-                        %a{:href => "#bond"}
-                          %b Táo Đài Loan
-                      %li
-                        %a{:href => "#whitaker"} Táo Thái
-                      %li
-                        %a{:href => "#arden"} Táo Đại
-                      %li
-                        %a{:href => "#channing"} Táo T5
-                      %li
-                        %a{:href => "#delphine"} Cam Vinh
-                      %li
-                        %a{:href => "#jacque"} Cam V5
-                      %li
-                        %a{:href => "#lampert"} Cam Canh
+                        %a{:href => "product2.html"}
+                          .row.m0.imgHov
+                            = image_tag("product/18.jpg", height: '200px')
+                            .row.m0.hovCnt
+                              .row.m0.hovCntInner
+                                shop now
+                                %i.fa.fa-caret-right
+                          .row.m0.menuTitle Bưởi Diễn
                   %li.boxMenu
                     .row.listTitle
                       Sản phẩm
@@ -183,7 +202,8 @@
                                 %i.fa.fa-caret-right
                           .row.m0.menuTitle Bưởi Diễn
               %li.dropdown
-                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"} Sản phẩm
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  = t(".product_index")
                 %ul.dropdown-menu{:role => "menu"}
                   %li
                     %a{:href => "product.html"} Cây ăn quả
@@ -198,11 +218,14 @@
                   %li
                     %a{:href => "checkout.html"} Cây cảnh
               %li
-                %a{:href => "index2.html"} Tin tức
+                %a{:href => "index2.html"}
+                  =t(".news_index")
               %li
-                %a{:href => "#"} Tham quan
+                %a{:href => "#"}
+                  =t(".sightseeing_index")
               %li
-                %a{:href => "contact.html"} Liên hệ
+                %a{:href => "contact.html"}
+                  =t(".numbe_phone")
           / /.navbar-collapse
         / /.container-fluid
       .row.topFeatures.m0
@@ -210,13 +233,13 @@
           %ul.nav.nav-justified.text-center
             %li
               = image_tag("icons/returns.png")
-              30 ngày / tháng
+              = t(".30days_1month")
             %li
               = image_tag("icons/delivery-car.png")
-              Tối ưu thời gian vận chuyển
+              = t(".optimal_transittime")
             %li
               = image_tag("icons/tel24-7.png")
-              Giúp đỡ 24/7
+              = t("help_24/7")
     / Header
     /
       section id="breadcrumbRow" class="row">
@@ -237,7 +260,7 @@
     %section.row.contentRowPad
       .container
         .row
-          - @product.each do |product|
+          - @products.each do |product|
             .col-sm-3.product
               .productInner.row.m0
                 .row.m0.imgHov
@@ -271,9 +294,6 @@
                   = button_to 'Add to Cart',                 |
   line_items_path(:product_id => product), |
   :remote => true                          |
-
-      %div
-        = paginate @products, theme: 'twitter-bootstrap-3'
         %table
           %tr{:style => "color: red"}
     %footer.row.footer2
