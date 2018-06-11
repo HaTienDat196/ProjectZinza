@@ -5,6 +5,7 @@ class Admin::ProductsController < AdminController
     @products = Product.all.page(params[:page]).per(12)
     @search = Product.search(params[:q])
     @product = @search.result
+  end
   def search
     index
     render :index

@@ -1,0 +1,10 @@
+.container
+  %h2 List User
+  %table.table
+    %thead
+      %tr
+        %th User ID
+    %tbody
+      - User.who_buy_your_products(current_user).each do |user|
+        %tr
+          %td= user.id

@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @search = Product.search(params[:q])
-    @product = @search.result.page(params[:page]).per(12)
+    @product = @search.result(distinct: true).page(params[:page]).per(12).includes(:category)
+
   end
 
   def show; end
@@ -28,8 +29,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -40,6 +39,14 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def danghang
+    @product = Product.all.page(params[:page]).per(12)
+  end
+
+  def quanlihang
+    @product = Product.all.page(params[:page]).per(12)
   end
 
   # DELETE /products/1

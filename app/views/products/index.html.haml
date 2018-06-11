@@ -46,16 +46,19 @@
       .row.m0.top_menus
         .container
           .row
-            %ul.nav.nav-pills.fleft
-              %li= link_to t(".home_pages"), products_path
-              %li
-              %li= link_to t(".order_item"), new_cart_path
-              %li
-              %li= link_to t(".number_phone"), new_cart_path
+          .row
+            = search_form_for @search, url: products_path, class: "form-inline" do |f|
+              .form-group
+                = f.label :name_cont, t(".product_name")
+                = f.text_field :name_cont, class: "form-control"
+                / = f.text_field :price_cont, class: "form-control"
+                %br/
+              = f.submit 'Search', class: "btn btn-default"
+          .row
             %ul.nav.nav-pills.fright
               %li= link_to t(".home_pages"), products_path
               %li= link_to t(".line_items"), line_items_path
-              %li= link_to t(".account"), new_admin_user_url
+              %li= link_to t(".account"), admin_root_path
               %li= link_to "English", locale:"en"
               %li= link_to "Vietnamese", locale:"vi"
       .row.m0.logo_line
@@ -66,12 +69,6 @@
                 %img_tag{:alt => "Furniture House", :src => "images/logo111.png", :style => "height:200px"}
       %nav.navbar.navbar-default.m0.navbar-static-top
         .container-fluid.container
-          = search_form_for @search, url: products_path, class: "form-inline" do |f|
-            .form-group
-              = f.label :name_cont, t(".product_name")
-              = f.text_field :name_cont, class: "form-control"
-              %br/
-            = f.submit 'Search', class: "btn btn-default"
           .navbar-header
             %button.navbar-toggle.collapsed{"data-target" => "#mainNav", "data-toggle" => "collapse", :type => "button"}
               %i.fa.fa-bars
@@ -97,15 +94,13 @@
                   = t(".community_index")
                 %ul.dropdown-menu{:role => "menu"}
                   %li
-                    %a{:href => "services.html"} Kĩ thuật
+                    %li= link_to t(".goods_management"), quanlihang_path
                   %li
-                    %a{:href => "blog.html"} Blog
+                    %li= link_to t(".buy_item")
                   %li
-                    %a{:href => "single-post.html"} Single Post
+                    %li= link_to t(".personal_website"), profile_path
                   %li
-                    %a{:href => "shortcodes.html"} Shortcodes
-                  %li
-                    %a{:href => "404.html"} 404
+                    %li= link_to t(".sales"), danghang_path
               %li.dropdown.megaMenu
                 %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
                   = t(".featured_items")
@@ -115,24 +110,6 @@
                     %ul.nav.megaInnerMenu
                       - @product.each do |product|
                         %a{:href => "#"}= product.name
-                  / %li.listMenu
-                  /   .row.listTitle Mua sắm theo đơn
-                  /   %ul.nav.megaInnerMenu
-                  /     %li
-                  /       %a{:href => "#bond"}
-                  /         %b Táo Đài Loan
-                  /     %li
-                  /       %a{:href => "#whitaker"} Táo Thái
-                  /     %li
-                  /       %a{:href => "#arden"} Táo Đại
-                  /     %li
-                  /       %a{:href => "#channing"} Táo T5
-                  /     %li
-                  /       %a{:href => "#delphine"} Cam Vinh
-                  /     %li
-                  /       %a{:href => "#jacque"} Cam V5
-                  /     %li
-                  /       %a{:href => "#lampert"} Cam Canh
                   %li.boxMenu
                     .row.listTitle
                       Sản phẩm
@@ -226,8 +203,6 @@
               %li
                 %a{:href => "contact.html"}
                   =t(".numbe_phone")
-          / /.navbar-collapse
-        / /.container-fluid
       .row.topFeatures.m0
         .container
           %ul.nav.nav-justified.text-center
@@ -240,23 +215,6 @@
             %li
               = image_tag("icons/tel24-7.png")
               = t("help_24/7")
-    / Header
-    /
-      section id="breadcrumbRow" class="row">
-      <div>
-      <haml_loud> image_tag(&quot;daingay/2.jpg&quot;, with: &#39;3000px&#39; ) </haml_loud>
-      <h2>Uy tín - Chất lượng - Hợp lí</h2>
-      <div class="row pageTitle m0">
-      <div class="container">
-      <h4 class="fleft">product page</h4>
-      <ul class="breadcrumb fright">
-      <li><a href="index-2.html">Trang chủ</a></li>
-      <li class="active">product page</li>
-      </ul>
-      </div>
-      </div>
-      </div>
-      </section
     %section.row.contentRowPad
       .container
         .row
@@ -268,17 +226,11 @@
                   .row.m0.hovArea
                     .row.m0.icons
                       %ul.list-inline
-                        %li
-                          %a{:href => "#"}
-                            %i.fa.fa-heart
-                        %li
-                          %a{:href => "#"}
-                            %i.fa.fa-exchange
-                        %li
-                          %a{:href => "#"}
-                            %i.fa.fa-expand
                     .row.m0.proType
                       %a{:href => "#"}= product.category.name
+                    .row.m0.proType
+                      %p số lượng
+                      = product.number
                     .row.m0.proRating
                       %i.fa.fa-star-o
                       %i.fa.fa-star-o
@@ -287,6 +239,7 @@
                       %i.fa.fa-star-o
                     .row.m0.proPrice
                       %i.fa.fa-usd
+                      %p giá thành
                       = product.price
                 .row.m0.proName
                   %a{:href => "single-product.html"}= product.name
