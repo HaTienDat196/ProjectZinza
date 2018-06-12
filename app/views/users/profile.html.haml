@@ -2,11 +2,7 @@
   %h2= t('profile')
   %form
     .form-group
-      %label{:for => "usr"}= t('name')
-      %input.form-control{:type => "text", :value => "#{current_user.name}"}/
-    .form-group
       %label{:for => "pwd"}= t('email')
       %input.form-control{:type => "text", :value => "#{current_user.email}"}/
-    .form-group
-      %label{:for => "pwd"}= t('avatar')
-      %img{:alt => "avatar", :height => "100", :src => "#{current_user.avatar}", :width => "100"}/
+      = link_to "Chinh sua tai khoan :", edit_user_registration_path, :class => 'navbar-link'
+      = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'

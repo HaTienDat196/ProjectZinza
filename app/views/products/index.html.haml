@@ -58,7 +58,6 @@
             %ul.nav.nav-pills.fright
               %li= link_to t(".home_pages"), products_path
               %li= link_to t(".line_items"), line_items_path
-              %li= link_to t(".account"), admin_root_path
               %li= link_to "English", locale:"en"
               %li= link_to "Vietnamese", locale:"vi"
       .row.m0.logo_line
@@ -81,12 +80,6 @@
                 %ul.dropdown-menu{:role => "menu"}
                   %li
                     %li= link_to t(".home_pages"), products_path
-                  %li
-                    %a{:href => "index3.html"} Home 1
-                  %li
-                    %a{:href => "index2.html"} Home 2
-                  %li
-                    %a{:href => "index3.html"} Home 3
               %li
               %li= link_to t(".production_unit"), admin_products_path
               %li.dropdown

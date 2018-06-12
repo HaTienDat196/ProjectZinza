@@ -3,8 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @search = Product.search(params[:q])
-    @product = @search.result(distinct: true).page(params[:page]).per(12).includes(:category)
-
+    @product = @search.result.page(params[:page]).per(8)
   end
 
   def show; end
