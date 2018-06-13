@@ -16,5 +16,4 @@ test:
   <<: *default
   database: cgnn_test
 production:
-  <<: *default
-  database: cgnn_tests
+  url: <%= ENV['DATABASE_URL'] %>
