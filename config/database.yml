@@ -2,10 +2,19 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: demo_user
-  password: 12345678
+  username: root
+  password: 1
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: rails
+  database: cgnn_development
+test:
+  <<: *default
+  database: cgnn_test
+test:
+  <<: *default
+  database: cgnn_test
+production:
+  <<: *default
+  database: cgnn_tests

@@ -28,4 +28,22 @@ en:
       sales: "Sale Items"
       Goods management: "Goods management"
       price_product: "Price Product"
+      admin_acount: "Amdmin"
+    show:
+      name_pr: "Name"
+      price_pr: "Price"
+      number_pr: "Number"
+      image_pr: "Image"
+      Category_pr: "Category"
+    quanlihang:
+      home_pr: "Com back to Home"
+      name_pr: "Name"
+      price_pr: "Price"
+      number_pr: "Number"
+      image_pr: "Image"
+      Category_pr: "Category"
+      create_newpr: "Create new Product"
+    danghang:
+      create_yourproduct: "Create your Product"
+      Your_manage: "Your Manage"
 

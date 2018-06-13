@@ -14,38 +14,52 @@ class CartsController < ApplicationController
   def edit; end
 
   def create
-    @cart = Cart.new(cart_params)
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-        format.json { render :show, status: :created, location: @cart }
+    if user_signed_in?
+      if current_user.cart.nil?
+        redirect_to product_path, notice: 'Vui lòng chọn lại sản phẩm'
       else
-        format.html { render :new }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
+        @cart = Cart.new(cart_params)
+        respond_to do |format|
+          if @cart.save
+            format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+            format.json { render :show, status: :created, location: @cart }
+          else
+            format.html { render :new }
+            format.json { render json: @cart.errors, status: :unprocessable_entity }
+          end
       end
     end
+    # else
+    #   redirect_to admin_user_path, notice: 'Vui lòng đăng nhập'
+    end
   end
-
   def update
-    # TODO: @cart nil thi sao???
-    respond_to do |format|
-      if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cart }
-      else
-        format.html { render :edit }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
+    if current_user.cart.nil?
+      redirect_to product_path, notice: 'Vui lòng chọn lại sản phẩm'
+    else
+      respond_to do |format|
+        if @cart.update(cart_params)
+          format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+          format.json { render :show, status: :ok, location: @cart }
+        else
+          format.html { render :edit }
+          format.json { render json: @cart.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   def destroy
-    @cart = current_cart
-    @cart.destroy
-    session[:cart_id] = nil
-    respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.cart.nil?
+      redirect_to product_path, notice: 'Vui lòng chọn lại sản phẩm'
+    else
+      @cart = current_cart
+      @cart.destroy
+      session[:cart_id] = nil
+      respond_to do |format|
+        format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

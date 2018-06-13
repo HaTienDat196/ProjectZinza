@@ -1,18 +1,18 @@
 %p#notice= notice
 %p
-  %strong Name:
+  %strong= t(".name_pr")
   = @product.name
 %p
-  %strong Price:
+  %strong= t(".price_pr")
   = @product.price
 %p
-  %strong Number:
+  %strong= t(".number_pr")
   = @product.number
 %p
-  %strong Image:
+  %strong= t(".image_pr")
   = @product.image
 %p
-  %strong Category:
+  %strong= t(".Category_pr")
   = @product.category.name
 %li= link_to t("Quản lí sản phẩm của bạn"), quanlihang_path
 

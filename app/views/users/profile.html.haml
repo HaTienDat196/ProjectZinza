@@ -1,8 +1,8 @@
 .container
-  %h2= t('profile')
+  %h2= t(".profile_user")
   %form
     .form-group
       %label{:for => "pwd"}= t('email')
       %input.form-control{:type => "text", :value => "#{current_user.email}"}/
-      = link_to "Chinh sua tai khoan :", edit_user_registration_path, :class => 'navbar-link'
-      = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
+      = link_to t(".edit_account"), edit_user_registration_path, :class => 'navbar-link'
+      = link_to t(".log_out"), destroy_user_session_path, method: :delete, :class => 'navbar-link'

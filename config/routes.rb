@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  # namespace :admin do
-  #   resources :products
-  #   resources :categories
-  #   resources :users
-  # end
   concern :paginatable do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
@@ -23,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :products, concerns: :paginatable
   get 'user/profile', to: 'users#profile', as: 'profile'
+  get 'user/get_user_bought_your_product', to: 'users#get_users_bought_your_product', as: 'get_user_bought_your_product'
   get "user/index", to: "users#index"
   get "/admin", to: "admin#index"
   get "/danghang", to: "products#danghang"

@@ -28,3 +28,29 @@ vi:
       sales: "Đăng hàng"
       goods_management: "Quản lí hàng"
       price_product: "Gía"
+      admin_acount: "Quản lí"
+    show:
+      name_pr: "Tên"
+      price_pr: "Gia"
+      number_pr: "Số lượng"
+      image_pr: "Hình ảnh"
+      Category_pr: "Loại cây"
+    quanlihang:
+      home_pr: "Trang chủ"
+      name_pr: "Tên"
+      price_pr: "Gia"
+      number_pr: "Số lượng"
+      image_pr: "Hình ảnh"
+      Category_pr: "Loại cây"
+      create_newpr: "Tạo sản phẩm mới"
+    danghang:
+      create_yourproduct: "Tạo sản phẩm của bạn"
+      Your_manage: "Quản lí sản phẩm của bạn"
+  users:
+    index:
+      hello_user: "Xin chào bạn"
+    profile:
+      profile_user: "Trang cá nhân"
+      edit_account: "Chỉnh sửa tài khoản"
+      log_out: "Đăng xuất"
+

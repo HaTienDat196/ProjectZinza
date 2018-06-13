@@ -29,6 +29,8 @@ AllCops:
     - db/migrate/20180530110936_devise_create_admin_users.rb
     - app/controllers/line_items_controller.rb
     - app/models/cart.rb
+    - rspec/factories
+    - spec/routing/orders_routing_spec.rb
 
 GlobalVars:
   AllowedVariables:

@@ -87,7 +87,7 @@
                   = t(".community_index")
                 %ul.dropdown-menu{:role => "menu"}
                   %li
-                    %li= link_to t(".goods_management"), quanlihang_path
+                    %li= link_to  t(".goods_management"), quanlihang_path
                   %li
                     %li= link_to t(".buy_item")
                   %li
@@ -193,9 +193,7 @@
               %li
                 %a{:href => "#"}
                   =t(".sightseeing_index")
-              %li
-                %a{:href => "contact.html"}
-                  =t(".numbe_phone")
+              %li= link_to t(".admin_acount"), admin_path
       .row.topFeatures.m0
         .container
           %ul.nav.nav-justified.text-center

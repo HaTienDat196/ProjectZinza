@@ -6,10 +6,10 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  def check_if_has_line_item
-    if line_items.empty?
-    else
-      errors.add(:base, 'This product has a LineItem')
-    end
-  end
+  # def check_if_has_line_item
+  #   if line_items.empty?
+  #   else
+  #     errors.add(:base, 'This product has a LineItem')
+  #   end
+  # end
 end
